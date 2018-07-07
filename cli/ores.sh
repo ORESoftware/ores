@@ -23,7 +23,7 @@ first_arg="$1";
 shift 1;
 
 
-if ! type -f ores_git_tools; then
+if ! type -f ores_git_tools &> /dev/null; then
   npm i -g -s '@oresoftware/git.tools' || {
     echo &>2 "Could not install ores command line tool.";
     exit 1;
@@ -34,6 +34,11 @@ fi
 if [ "$first_arg" == "clone" ]; then
 
   node "$commands/clone" "$@"
+
+
+elif [ "$first_arg" == "copy-git-tools" ]; then
+
+   ores_git_tools "copy-tools" "$@"
 
 else
 
