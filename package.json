@@ -1,10 +1,11 @@
 {
   "name": "@oresoftware/ores",
-  "version": "0.0.1001",
+  "version": "0.0.1002",
   "description": "Semver-oriented TypeScript library skeleton.",
   "main": "dist/index.js",
   "bin": {
-    "ores": "cli/ores.sh"
+    "ores": "cli/ores.sh",
+    "ores_get_project_root": "cli/ores-get-project-root.sh"
   },
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
