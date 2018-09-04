@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
 
+all_export="yep";
+
+if [[ ! "$SHELLOPTS" =~ "allexport" ]]; then
+    all_export="nope";
+    set -a;
+fi
+
 
 ores(){
 
@@ -54,5 +61,9 @@ ores(){
 
    command ores "$@";
 
-
 }
+
+
+if [ "$all_export" == "nope" ]; then
+  set +a;
+fi
